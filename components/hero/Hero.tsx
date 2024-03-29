@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-start z-10 p-4 text-center lg:text-left">
         <div className="bg-black bg-opacity-60 p-8 rounded-lg shadow-lg max-w-xl ml-4 lg:ml-20">
           <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold mb-4">
-            THE ITL CONFERENCE '25
+            THE ITL CONFERENCE &#39;25
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl mb-4">
             Crossing Borders, Breaking Barriers.
