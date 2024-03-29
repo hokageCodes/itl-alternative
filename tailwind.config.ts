@@ -8,12 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        bg: '#FEFBF6', // Background color
+        textPrimary: '#7F5283', // Primary text color
+        textDark: '#000000', // Black text color for alternative use
+        ctaBg: '#3D3C42', // CTA background color
+        ctaHover: '#3F2E3E', // Suggested hover color for CTA
+        minor: '#A6D1E6', // Color for minor details
       },
-    },
+    },  
   },
   plugins: [],
 };
