@@ -33,17 +33,17 @@ const Navbar = () => {
 
         {/* Navigation Links Centered */}
         <div className="hidden md:flex gap-8 justify-center flex-1">
-          <a href="/itl25-conference" className="font-bold hover:text-gray-300">&#39;25 Conference</a>
-          <a href="/pre-register" className="font-bold hover:text-gray-300">Registration</a>
-          <a href="/speakers" className="font-bold hover:text-gray-300">Speakers</a>
-          <a href="/partners" className="font-bold hover:text-gray-300">Partners</a>
-          <a href="/faqs" className="font-bold hover:text-gray-300">FAQs</a>
-          <a href="/awards" className="font-bold hover:text-gray-300">Awards</a>
+          <a href="/itl25-conference" className="font-black hover:text-gray-300">&#39;25 Conference</a>
+          <a href="/pre-register" className="font-black hover:text-gray-300">Registration</a>
+          <a href="/speakers" className="font-black hover:text-gray-300">Speakers</a>
+          <a href="/partners" className="font-black hover:text-gray-300">Partners</a>
+          <a href="/faqs" className="font-black hover:text-gray-300">FAQs</a>
+          <a href="/awards" className="font-black hover:text-gray-300">Awards</a>
         </div>
 
         {/* CTA Button to the Far Right */}
         <div className="hidden md:flex">
-          <a href="#" className="py-2 px-8 bg-ctaBg text-white hover:bg-ctaHover rounded transition duration-300">Volunteer</a>
+          <a href="/volunteer" className="py-2 px-8 bg-ctaBg text-white hover:bg-ctaHover rounded transition duration-300">Volunteer</a>
         </div>
 
         {/* Hamburger Menu Button (Mobile View) */}
@@ -64,7 +64,7 @@ const Navbar = () => {
         <a href="/partners" className="block py-2 px-4 text-sm font-bold">Partners</a>
         <a href="/faqs" className="block py-2 px-4 text-sm font-bold">FAQs</a>
         <a href="/awards" className="block py-2 px-4 text-sm font-bold">Awards</a>
-        <a href="#" className="block mx-auto my-4 py-2 px-4 w-auto bg-ctaBg text-white hover:bg-ctaHover rounded transition duration-300 text-center">Volunteer</a>
+        <a href="/volunteer" className="block mx-auto my-4 py-2 px-4 w-auto bg-ctaBg text-white hover:bg-ctaHover rounded transition duration-300 text-center">Volunteer</a>
       </div>
     </nav>
   );

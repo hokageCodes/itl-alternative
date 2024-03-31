@@ -32,7 +32,7 @@ const SpeakerIntroSection = () => {
           variants={imageVariants}
           className="w-full lg:w-1/3 flex-shrink-0"
         >
-          <Image src="/Obs.png" alt="Keynote Speaker" width={500} height={500} layout="responsive" />
+          <Image src="/keynote.png" alt="Keynote Speaker" width={500} height={500} layout="responsive" />
         </motion.div>
 
         {/* Text and CTA */}
@@ -44,7 +44,9 @@ const SpeakerIntroSection = () => {
           className="w-full lg:w-2/3"
         >
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Meet Our Keynote Speaker</h2>
-          <p className="mb-6">Discover the insights and expertise of [Speaker Name], a leading figure in [Field/Industry], as they discuss [Topic].</p>
+          <p className="mb-6">“Watch this space for more details as we unveil the keynote speaker for the ITL 
+              Conference 2025
+          </p>
           <Link legacyBehavior href="/speakers" passHref>
             <a className="inline-block bg-ctaBg text-white hover:bg-ctaHover rounded font-bold py-2 px-4 lg:py-3 lg:px-6 rounded transition-colors duration-300">See All Speakers</a>
           </Link>

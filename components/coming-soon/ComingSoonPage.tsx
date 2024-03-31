@@ -20,7 +20,8 @@ const ComingSoonPage = () => {
         transition={{ duration: 0.6 }}
         className="text-lg text-gray-700 text-center"
       >
-        We are currently working on this page. Stay tuned for updates!
+        “Watch this space for more details as we unveil for the ITL 
+        Conference 2025!
       </motion.p>
       <a href="/" className="block mx-auto my-4 py-2 px-4 w-auto bg-ctaBg text-white hover:bg-ctaHover rounded transition duration-300 text-center">Go back home</a>
     </div>

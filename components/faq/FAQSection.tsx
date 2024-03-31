@@ -11,9 +11,11 @@ interface Faq {
 
 const faqs: Faq[] = [
   // Include a few FAQs here for the landing page preview
-  { question: "What is the ITL Conference?", answer: "The ITL Conference is the largest gathering of Internationally Trained Lawyers in Canada, offering networking opportunities, workshops, and keynotes from industry leaders." },
-  { question: "What is the ITL Conference?", answer: "The ITL Conference is the largest gathering of Internationally Trained Lawyers in Canada, offering networking opportunities, workshops, and keynotes from industry leaders." },
-  { question: "What is the ITL Conference?", answer: "The ITL Conference is the largest gathering of Internationally Trained Lawyers in Canada, offering networking opportunities, workshops, and keynotes from industry leaders." },
+  { question: " What is the Internationally Trained Lawyers Conference?", answer: "The ITL Conference is the largest gathering of Internationally Trained Lawyers (ITLs) in Canada. The Conference will feature different legal professionals, regulators, change makers, and other stakeholders committed to supporting ITLs in their legal practice journey in Canada. The ITL Conference is a joint effort of our partner organizations: The ITL Network and Global Lawyers of Canada." },
+
+  { question: "When and where will the ITL Conference take place?", answer: "The ITL Conference has been scheduled to hold between April 3-5, 2025 in the city of Calgary, Alberta." },
+
+  { question: "Who should attend the ITL Conference?", answer: "The conference is opened to internationally trained lawyers, students, legal educators, employers, recruiters, equity seeking groups and other legal professionals." },
 ];
 
 const FaqItem = ({ question, answer }: Faq) => {
