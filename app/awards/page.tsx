@@ -87,7 +87,7 @@ const AwardsSection = () => {
     {
       id: 9,
       title: "Entrepreneurial Excellence Award",
-      description: "This award honors an ITL who has demonstrated exceptional entrepreneurial spirit, innovation, and leadership in the business sector. Whether through founding a startup, leading a successful business venture, or driving innovation within an established company, this individual exemplifies excellence in business acumen, strategic thinking, and transformative leadership. Their entrepreneurial endeavors contribute to economic growth, job creation, and industry innovation, showcasing the valuable skills and expertise of internationally trained lawyers in the Canadian business landscape.",
+      description: "This award honors an ITL who has demonstrated exceptional entrepreneurial spirit, innovation, and leadership in the business sector. Whether through founding a startup, leading a successful business venture, or driving innovation within an established company, this individual exemplifies excellence in business acumen, strategic thinking, and transformative leadership.",
       icon: "/plaque.png", // Placeholder path, replace with actual path to icon
     },
     {
