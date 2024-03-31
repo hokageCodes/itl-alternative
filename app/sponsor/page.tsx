@@ -24,13 +24,13 @@ const Sponsor = () => {
         <div className="flex flex-col md:flex-row bg-bg rounded overflow-hidden max-w-4xl w-full">
           <div className="p-8 space-y-4 md:w-1/2">
             <h2 className="text-2xl font-bold pt-24 text-textPrimary">Become a Sponsor</h2>
-            <p className='text-md'>Support the ITL Conference by becoming a sponsor. Your sponsorship helps us deliver a more enriching experience for all attendees.</p>
+            <p className='text-md'>Interested in sponsoring the ITL Conference? Please submit your details and someone on our team will reach out with more details.</p>
           </div>
           {/* Reusing the form structure with adjusted ID and Name attributes if necessary */}
           <div className="p-8 md:border-l md:w-2/3">
             <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name of Organization / Individual</label>
                 <input id="name" name="name" type="text" required
                   className="mt-1 p-2 w-full border border-gray-300 rounded-md shadow-sm"
                   value={name} onChange={(e) => setName(e.target.value)} />

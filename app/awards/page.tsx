@@ -51,7 +51,7 @@ const AwardsSection = () => {
     {
       id: 3,
       title: "Leadership in Legal Education Award",
-      description: "Honoring an individual or institution that has shown outstanding leadership and innovation in providing educational support and resources for internationally trained lawyers to integrate into the Canadian legal profession. This can also be awarded to an ITL who has made exceptional contributions to legal scholarship through their research, publications, and academic endeavors within the Canadian legal education system. This individual demonstrates excellence in advancing legal knowledge, promoting critical thinking, and shaping discourse within their field of expertise. Their scholarly work enhances the academic community, enriches legal education, and contributes to the development of legal theory and practice in Canada.",
+      description: "Honoring an individual or institution that has shown outstanding leadership and innovation in providing educational support and resources for internationally trained lawyers to integrate into the Canadian legal profession. This can also be awarded to an ITL who has made exceptional contributions to legal scholarship through their research, publications, and academic endeavors within the Canadian legal education system.",
       icon: "/plaque.png", // Placeholder path, replace with actual path to icon
     },
     {
