@@ -92,7 +92,7 @@ const AwardsSection = () => {
     },
     {
       id: 10,
-      title: "The Nobel Award:",
+      title: "The Nobel Award",
       description: "This is the flagship award of the year. This award recognizes an outstanding ITL who has shown exemplary leadership, advocacy, and dedication to advancing the interests and rights of internationally trained lawyers within the Canadian legal profession. This ITL would have displayed exceptional mentorship qualities and be a model and exemplary ITL in the Canadian Legal community.",
       icon: "/plaque.png", // Placeholder path, replace with actual path to icon
     },
@@ -123,7 +123,7 @@ const AwardsSection = () => {
           ))}
         </CardsContainer>
         <div className="text-center mt-12">
-          <a href="http://www.itlconference.ca" className="inline-block bg-ctaBg text-white font-bold py-2 px-4 rounded hover:bg-ctaHover transition-colors duration-300">Please visit www.itlconference.ca to nominate</a>
+          <a href="http://www.itlconference.ca" className="inline-block bg-ctaBg text-white font-bold py-2 px-4 rounded hover:bg-ctaHover transition-colors duration-300">Please click here to nominate</a>
         </div>
       </div>
     </>
