@@ -1,7 +1,14 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+
+interface Award {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
 
 const Banner = styled.div`
   height: 500px;
@@ -16,25 +23,38 @@ const Banner = styled.div`
 const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; // Keeps cards evenly spaced
-  margin: 0 auto;
-  max-width: 1200px; // Adjust based on your design preference
+  justify-content: center;
+  padding: 20px;
 `;
 
 const Card = styled.div`
-  width: 45%; // Adjusts each card to take up roughly half of the container width
+  flex: 1 1 30%; /* Adjusted width to fit 3 cards in a row */
   background: #FEFBF6;
   color: #331D2C;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  margin-bottom: 20px; // Spacing between rows of cards
+  margin: 10px;
+  max-width: calc(33.333% - 20px); /* Adjusted max-width for 3 cards */
+
+  @media (max-width: 768px) {
+    flex-basis: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const AwardsSection = () => {
+const ReadMoreLink = styled.button`
+  border: none;
+  background: none;
+  color: #007bff;
+  cursor: pointer;
+`;
+
+const AwardsSection: React.FC = () => {
   const awards = [
     {
       id: 1,
@@ -97,37 +117,50 @@ const AwardsSection = () => {
       icon: "/plaque.png", // Placeholder path, replace with actual path to icon
     },
   ];
+  
+  
+
+  const [expandedIds, setExpandedIds] = useState<number[]>([]);
+
+  const toggleExpand = (id: number) => {
+    if (expandedIds.includes(id)) {
+      setExpandedIds(expandedIds.filter((item) => item !== id));
+    } else {
+      setExpandedIds([...expandedIds, id]);
+    }
+  };
+
   return (
-    <>
-      <Banner></Banner>
-      <div className="px-6 py-12 text-ctaBg text-textPrimary">
-        <h2 className="text-center text-3xl font-bold mb-8">The ITL Conference &#39;25 Awards</h2>
-        <p className="text-center mb-12 max-w-[700px] ml-[380px]">At the upcoming ITL Conference, we will be recognizing the remarkable achievements and
-        contributions of internationally trained lawyers (ITLs) and the stakeholders, community partners
-        and law firms that support them. These awards celebrate excellence, innovation, and leadership
-        within the Canadian legal profession, fostering a culture of equity, diversity, inclusion, and
-        collaboration.
-        </p>
-        <p className="text-center mb-12 max-w-[700px] ml-[380px]">We invite ITLs, law firms, and legal professionals across Canada to participate in this prestigious
-        recognition of talent and dedication. Below are the award categories designed to honor outstanding
-        individuals, organizations, and initiatives that have made a significant impact on the Canadian legal
-        landscape:
-        </p>
+    <div className="mt-24">
+      <Banner>
+      </Banner>
+      <div className="px-6 py-12 text-gray-800">
+        <h2 className="text-3xl font-bold text-center mb-8">The ITL Conference '25 Awards</h2>
+        <p className="text-center mb-8">At the upcoming ITL Conference, we will be recognizing the remarkable achievements and contributions of internationally trained lawyers (ITLs) and the stakeholders, community partners, and law firms that support them. These awards celebrate excellence, innovation, and leadership within the Canadian legal profession, fostering a culture of equity, diversity, inclusion, and collaboration.</p>
+        <p className="text-center mb-8">We invite ITLs, law firms, and legal professionals across Canada to participate in this prestigious recognition of talent and dedication. Below are the award categories designed to honor outstanding individuals, organizations, and initiatives that have made a significant impact on the Canadian legal landscape.</p>
         <CardsContainer>
-          {awards.map((award, index) => (
-            <Card key={index}>
+          {awards.map((award) => (
+            <Card key={award.id}>
               <Image src={award.icon} alt={award.title} width={100} height={50} />
               <h4 className="mt-4 font-bold">{award.title}</h4>
-              <p className="mt-2 text-center">{award.description}</p>
+              {expandedIds.includes(award.id) ? (
+                <p className="mt-2 text-center">{award.description}</p>
+              ) : (
+                <p className="mt-2 text-center">{award.description.slice(0, 100)}...</p>
+              )}
+              <ReadMoreLink onClick={() => toggleExpand(award.id)}>
+                {expandedIds.includes(award.id) ? 'Read Less' : 'Read More'}
+              </ReadMoreLink>
             </Card>
           ))}
         </CardsContainer>
         <div className="text-center mt-12">
-          <a href="http://www.itlconference.ca" className="inline-block bg-ctaBg text-white font-bold py-2 px-4 rounded hover:bg-ctaHover transition-colors duration-300">Please click here to nominate</a>
+          <a href="/nominate" className="inline-block bg-ctaBg text-white font-bold py-3 px-8 rounded hover:bg-ctaHover transition-colors duration-300">Click here to nominate</a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default AwardsSection;
+

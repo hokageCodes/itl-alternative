@@ -1,68 +1,54 @@
-// ScheduleSection.tsx
-"use client"
 import React, { useState } from 'react';
 import ScheduleTab from './ScheduleTab';
-import ScheduleCard from './ScheduleCard';
 import { motion } from 'framer-motion';
 
 const ScheduleSection: React.FC = () => {
-  const [activeTabDate, setActiveTabDate] = useState<string>('January 14, 2019');
+  const [activeTabDate, setActiveTabDate] = useState<string>('Thursday, April 3, 2025');
 
   const tabs = [
-    { day: 'Thursday', date: 'April 3, 2025' },
-    { day: 'Friday', date: 'April 4, 2025' },
-    { day: 'Saturday', date: 'April 5, 2025' },
+    { day: 'Thursday', date: 'Thursday, April 3, 2025' },
+    { day: 'Friday', date: 'Friday, April 4, 2025' },
+    { day: 'Saturday', date: 'Saturday, April 5, 2025' },
   ];
 
-  // Sample data for the events. This would typically come from an API or a data file.
   const allEvents = [
-    // Events for Monday
+    // Events for Thursday
     {
       title: 'Dealing with Difficult People',
       speakerName: 'Gary Armstrong',
       speakerRole: 'CEO of Confer',
-      time: '10:30 - 11',
-      date: 'April 3, 2025',
+      time: '6pm - 9pm MST',
+      date: 'Thursday, April 3, 2025',
       location: 'Mountain Resort, Phoenix, USA',
-      speakerImage: '/speakers/gary-armstrong.jpg',
     },
+    // Events for Friday
     {
       title: 'Innovative Design Workshop',
       speakerName: 'Jane Doe',
       speakerRole: 'Lead Designer at Creatives',
-      time: '12:00 - 13:30',
-      date: 'April 4, 2025',
+      time: '9am - 11am MST',
+      date: 'Friday, April 4, 2025',
       location: 'Design Hub, Calgary, Alberta',
-      speakerImage: '/speakers/jane-doe.jpg',
     },
-    // ... other events for Monday
-
-    // Events for Tuesday
-    {
-      title: 'Future of Technology',
-      speakerName: 'John Smith',
-      speakerRole: 'CTO of TechFuture',
-      time: '09:00 - 10:30',
-      date: 'April 5, 2025',
-      location: 'Innovation Center, Calgary, Alberta',
-      speakerImage: '/speakers/john-smith.jpg',
-    },
-    // ... other events for Tuesday
-
-    // Events for Wednesday
     {
       title: 'Panel Discussion: Legal Trends',
       speakerName: 'Emily Johnson',
       speakerRole: 'Legal Analyst',
-      time: '14:00 - 15:30',
-      date: 'January 16, 2019',
+      time: '2pm - 3pm MST',
+      date: 'Friday, April 4, 2025',
       location: 'Legal Center, Phoenix, USA',
-      speakerImage: '/speakers/emily-johnson.jpg',
     },
-    // ... other events for Wednesday
+    // Events for Saturday
+    {
+      title: 'The Impact Awards/Gala',
+      speakerName: 'TBD',
+      speakerRole: '',
+      time: '6pm - 9pm MST',
+      date: 'Saturday, April 5, 2025',
+      location: '',
+    },
   ];
 
-  // Filter events for the currently active tab
   const eventsToShow = allEvents.filter((event) => event.date === activeTabDate);
 
   return (
@@ -101,18 +87,16 @@ const ScheduleSection: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-center"
         >
           {eventsToShow.map((event, index) => (
-            <ScheduleCard
-              key={index}
-              title={event.title}
-              speakerName={event.speakerName}
-              speakerRole={event.speakerRole}
-              time={event.time}
-              location={event.location}
-              speakerImage={event.speakerImage}
-            />
+            <div key={index} className="bg-white rounded-lg shadow-lg p-4 text-center">
+              <h3 className="font-black text-textPrimary">{event.title}</h3>
+              <p className="text-sm text-textPrimary">{event.speakerName}</p>
+              <p className="text-sm text-textPrimary">{event.speakerRole}</p>
+              <p className="text-xs text-black">{event.time}</p>
+              <p className="text-xs text-black">{event.location}</p>
+            </div>
           ))}
         </motion.div>
       </div>
@@ -121,3 +105,4 @@ const ScheduleSection: React.FC = () => {
 };
 
 export default ScheduleSection;
+

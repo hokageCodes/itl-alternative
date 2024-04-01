@@ -1,5 +1,3 @@
-// ScheduleTab.tsx
-
 import React from 'react';
 
 interface ScheduleTabProps {

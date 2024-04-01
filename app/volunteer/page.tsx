@@ -24,7 +24,7 @@ const Volunteer = () => {
         <div className="flex flex-col md:flex-row bg-bg rounded overflow-hidden max-w-4xl w-full">
           <div className="p-8 space-y-4 md:w-1/2">
             <h2 className="text-2xl font-bold pt-24 text-textPrimary">Volunteer with Us</h2>
-            <p className='text-md'>Join our volunteer team to make a significant impact. Volunteering gives you the opportunity to contribute, learn, and connect with others.</p>
+            <p className='text-md'>Join our volunteer team to make a significant impact and be a part of history. Volunteering gives you the opportunity to contribute, learn, and connect with fellow ITLs at the conference.</p>
           </div>
           {/* Reusing the form structure with adjusted ID and Name attributes if necessary */}
           <div className="p-8 md:border-l md:w-2/3">
