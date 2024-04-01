@@ -14,29 +14,45 @@ const ScheduleSection: React.FC = () => {
   const allEvents = [
     // Events for Thursday
     {
-      title: 'Dealing with Difficult People',
-      speakerName: 'Gary Armstrong',
-      speakerRole: 'CEO of Confer',
+      title: 'TBD',
+      speakerName: 'TBD',
+      speakerRole: 'TBD',
       time: '6pm - 9pm MST',
       date: 'Thursday, April 3, 2025',
-      location: 'Mountain Resort, Phoenix, USA',
+      location: 'Calgary, Alberta',
     },
     // Events for Friday
     {
-      title: 'Innovative Design Workshop',
-      speakerName: 'Jane Doe',
-      speakerRole: 'Lead Designer at Creatives',
+      title: 'TBD',
+      speakerName: 'TBD',
+      speakerRole: 'TBD',
       time: '9am - 11am MST',
       date: 'Friday, April 4, 2025',
-      location: 'Design Hub, Calgary, Alberta',
+      location: 'Calgary, Alberta',
     },
     {
-      title: 'Panel Discussion: Legal Trends',
-      speakerName: 'Emily Johnson',
-      speakerRole: 'Legal Analyst',
-      time: '2pm - 3pm MST',
+      title: 'TBD',
+      speakerName: 'TBD',
+      speakerRole: 'TBD',
+      time: '9am - 11am MST',
       date: 'Friday, April 4, 2025',
-      location: 'Legal Center, Phoenix, USA',
+      location: 'Calgary, Alberta',
+    },
+    {
+      title: 'TBD',
+      speakerName: 'TBD',
+      speakerRole: 'TBD',
+      time: '9am - 11am MST',
+      date: 'Friday, April 4, 2025',
+      location: 'Calgary, Alberta',
+    },
+    {
+      title: 'TBD',
+      speakerName: 'TBD',
+      speakerRole: 'TBD',
+      time: '9am - 11am MST',
+      date: 'Friday, April 4, 2025',
+      location: 'Calgary, Alberta',
     },
     // Events for Saturday
     {
@@ -45,7 +61,7 @@ const ScheduleSection: React.FC = () => {
       speakerRole: '',
       time: '6pm - 9pm MST',
       date: 'Saturday, April 5, 2025',
-      location: '',
+      location: 'Calgary, Alberta',
     },
   ];
 
