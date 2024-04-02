@@ -1,7 +1,8 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import Loader from '@/components/loader/Loader';
 
 interface Award {
   id: number;
@@ -28,14 +29,14 @@ const CardsContainer = styled.div`
 `;
 
 const Card = styled.div`
-  flex: 1 1 30%; /* Adjusted width to fit 3 cards in a row */
+  flex: 1 1 30%;
   background: #FEFBF6;
   color: #331D2C;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin: 10px;
-  max-width: calc(33.333% - 20px); /* Adjusted max-width for 3 cards */
+  max-width: calc(33.333% - 20px);
 
   @media (max-width: 768px) {
     flex-basis: calc(100% - 20px);
@@ -121,6 +122,16 @@ const AwardsSection: React.FC = () => {
   
 
   const [expandedIds, setExpandedIds] = useState<number[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    // Simulating data loading delay
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const toggleExpand = (id: number) => {
     if (expandedIds.includes(id)) {
@@ -132,27 +143,28 @@ const AwardsSection: React.FC = () => {
 
   return (
     <div className="mt-24">
-      <Banner>
-      </Banner>
+      <Banner></Banner>
       <div className="px-6 py-12 text-gray-800">
         <h2 className="text-3xl font-bold text-center mb-8">The ITL Conference '25 Awards</h2>
-        <p className="text-center mb-8">At the upcoming ITL Conference, we will be recognizing the remarkable achievements and contributions of internationally trained lawyers (ITLs) and the stakeholders, community partners, and law firms that support them. These awards celebrate excellence, innovation, and leadership within the Canadian legal profession, fostering a culture of equity, diversity, inclusion, and collaboration.</p>
-        <p className="text-center mb-8">We invite ITLs, law firms, and legal professionals across Canada to participate in this prestigious recognition of talent and dedication. Below are the award categories designed to honor outstanding individuals, organizations, and initiatives that have made a significant impact on the Canadian legal landscape.</p>
         <CardsContainer>
-          {awards.map((award) => (
-            <Card key={award.id}>
-              <Image src={award.icon} alt={award.title} width={100} height={50} />
-              <h4 className="mt-4 font-bold">{award.title}</h4>
-              {expandedIds.includes(award.id) ? (
-                <p className="mt-2 text-center">{award.description}</p>
-              ) : (
-                <p className="mt-2 text-center">{award.description.slice(0, 100)}...</p>
-              )}
-              <ReadMoreLink onClick={() => toggleExpand(award.id)}>
-                {expandedIds.includes(award.id) ? 'Read Less' : 'Read More'}
-              </ReadMoreLink>
-            </Card>
-          ))}
+          {isLoading ? (
+            <Loader />
+          ) : (
+            awards.map((award) => (
+              <Card key={award.id}>
+                <Image src={award.icon} alt={award.title} width={100} height={50} />
+                <h4 className="mt-4 font-bold">{award.title}</h4>
+                {expandedIds.includes(award.id) ? (
+                  <p className="mt-2 text-center">{award.description}</p>
+                ) : (
+                  <p className="mt-2 text-center">{award.description.slice(0, 100)}...</p>
+                )}
+                <ReadMoreLink onClick={() => toggleExpand(award.id)}>
+                  {expandedIds.includes(award.id) ? 'Read Less' : 'Read More'}
+                </ReadMoreLink>
+              </Card>
+            ))
+          )}
         </CardsContainer>
         <div className="text-center mt-12">
           <a href="/nominate" className="inline-block bg-ctaBg text-white font-bold py-3 px-8 rounded hover:bg-ctaHover transition-colors duration-300">Click here to nominate</a>
@@ -163,4 +175,6 @@ const AwardsSection: React.FC = () => {
 };
 
 export default AwardsSection;
+
+
 
