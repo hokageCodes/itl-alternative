@@ -145,7 +145,7 @@ const AwardsSection: React.FC = () => {
     <div className="mt-24">
       <Banner></Banner>
       <div className="px-6 py-12 text-gray-800">
-        <h2 className="text-3xl font-bold text-center mb-8">The ITL Conference '25 Awards</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">The ITL Conference &#39;25 Awards</h2>
         <CardsContainer>
           {isLoading ? (
             <Loader />
