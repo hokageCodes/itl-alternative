@@ -1,7 +1,7 @@
 import React from 'react'
 import { BallTriangle } from 'react-loader-spinner'
 
-export default function 
+export default function Loader
 () {
   return (
     <div>
