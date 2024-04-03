@@ -78,7 +78,7 @@ const Volunteer: React.FC = () => {
   };
 
   const handleGoBack = () => {
-    console.log('Navigate back home');
+    window.location.href = "/";
   };
 
   return (

@@ -14,7 +14,7 @@ const ScheduleSection: React.FC = () => {
   const allEvents = [
     // Events for Thursday
     {
-      title: 'TBD',
+      title: 'Opening ceremony',
       speakerName: 'TBD',
       speakerRole: 'TBD',
       time: '6pm - 9pm MST',
@@ -34,7 +34,7 @@ const ScheduleSection: React.FC = () => {
       title: 'TBD',
       speakerName: 'TBD',
       speakerRole: 'TBD',
-      time: '9am - 11am MST',
+      time: '11am - 1pm',
       date: 'Friday, April 4, 2025',
       location: 'Calgary, Alberta',
     },
@@ -42,7 +42,7 @@ const ScheduleSection: React.FC = () => {
       title: 'TBD',
       speakerName: 'TBD',
       speakerRole: 'TBD',
-      time: '9am - 11am MST',
+      time: '1pm - 3pm',
       date: 'Friday, April 4, 2025',
       location: 'Calgary, Alberta',
     },
@@ -50,7 +50,7 @@ const ScheduleSection: React.FC = () => {
       title: 'TBD',
       speakerName: 'TBD',
       speakerRole: 'TBD',
-      time: '9am - 11am MST',
+      time: '3pm - 5pm',
       date: 'Friday, April 4, 2025',
       location: 'Calgary, Alberta',
     },

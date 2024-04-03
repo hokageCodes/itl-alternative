@@ -146,6 +146,17 @@ const AwardsSection: React.FC = () => {
       <Banner></Banner>
       <div className="px-6 py-12 text-gray-800">
         <h2 className="text-3xl font-bold text-center mb-8">The ITL Conference &#39;25 Awards</h2>
+        <p className='text-center mb-4'>At the upcoming ITL Conference, we will be recognizing the remarkable achievements and
+          contributions of internationally trained lawyers (ITLs) and the stakeholders, community partners
+          and law firms that support them. These awards celebrate excellence, innovation, and leadership
+          within the Canadian legal profession, fostering a culture of equity, diversity, inclusion, and
+          collaboration.
+        </p>
+        <p className='text-center'>We invite ITLs, law firms, and legal professionals across Canada to participate in this prestigious
+          recognition of talent and dedication. Below are the award categories designed to honor outstanding
+          individuals, organizations, and initiatives that have made a significant impact on the Canadian legal
+          landscape.
+          </p>
         <CardsContainer>
           {isLoading ? (
             <Loader />

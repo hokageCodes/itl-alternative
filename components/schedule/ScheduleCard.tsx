@@ -19,7 +19,7 @@ const ScheduleCard: React.FC<ScheduleCardProps> = ({
   speakerImage,
 }) => {
   return (
-    <div className="bg-bg rounded-lg shadow-lg p-4 flex flex-col items-center text-center space-y-8" style={{ width: '300px' }}>
+    <div id='schedule-section' className="bg-bg rounded-lg shadow-lg p-4 flex flex-col items-center text-center space-y-8" style={{ width: '300px' }}>
       <div className="w-24 h-24 relative rounded-full overflow-hidden border-2 border-textPrimary">
         <Image src={speakerImage} alt={speakerName} layout="fill" objectFit="cover" />
       </div>

@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useState, useEffect } from 'react';
 import VideoBackground from '../video-bg/VideoBackground'; 
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
@@ -20,13 +18,16 @@ const ContentContainer = styled.div`
   width: 100%;
   padding: 1rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; // Align items to the left
+  justify-content: flex-start; // Align content to the left
   z-index: 10;
 
   @media (max-width: 768px) {
     padding: 4rem 1rem; // Increase padding on smaller screens
-    top: 20%; // Adjust top position for better visibility
+    top: 50%; // Center content vertically on mobile
+    transform: translateY(-50%);
+    align-items: center; // Center items vertically on mobile
+    justify-content: center; // Center content horizontally on mobile
   }
 `;
 
@@ -39,30 +40,45 @@ const TextContainer = styled.div`
   margin: 0 1rem; // Ensure some margin on smaller screens
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; // Align items to the left
+  margin-top: 100px;
+
+  @media (max-width: 768px) {
+    text-align: center; // Center text on mobile
+    align-items: center; // Center items horizontally on mobile
+  }
 
   h1, p {
-    text-align: center;
+    margin-bottom: 1rem; // Add space between heading and paragraphs
   }
 
-  h1 {
-    font-size: 1.75rem; // Smaller base size
-    @media (min-width: 640px) { font-size: 2.25rem; }
-    @media (min-width: 1024px) { font-size: 3rem; } // Scale up for larger screens
+  .countdown-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem; // Add space between countdown and paragraphs
+
+    .countdown-item {
+      text-align: center; // Center text within each countdown item
+      margin-right: 1rem; // Add spacing between countdown items
+    }
   }
 
-  p {
-    font-size: 0.875rem; // Smaller base size for paragraphs
-    @media (min-width: 640px) { font-size: 1rem; }
-    @media (min-width: 1024px) { font-size: 1.25rem; } // Scale up for larger screens
-    margin: 1rem 0; // Adds margin around paragraphs for separation
+  .countdown-text {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem; // Add space between countdown text and buttons
+    color: #FFF;
+
+    p {
+      margin: 0 0.5rem; // Add spacing between countdown text items
+    }
   }
 
   .buttons-container {
     display: flex;
     flex-direction: column;
     width: 100%; // Buttons take full width of the container
-    align-items: center;
+    align-items: flex-start; // Align buttons to the left
 
     @media (min-width: 768px) {
       flex-direction: row;
@@ -102,16 +118,16 @@ const Hero: React.FC = () => {
       <VideoBackground src="/hero-video.mp4" />
       <ContentContainer>
         <TextContainer>
-          <h1>THE ITL CONFERENCE &#39;25</h1>
-          <p>Crossing Borders, Breaking Barriers.</p>
-          <p>April 3-5, 2025 - Calgary, Alberta</p>
-          <div className="flex justify-around space-x-4 mb-6">
+          <h1 className='text-4xl font-black'>THE ITL CONFERENCE '25</h1>
+          <p className='text-2xl font-bold'>Crossing Borders, Breaking Barriers.</p>
+          <p className='text-lg'>April 3-5, 2025 - Calgary, Alberta</p>
+          <div className="countdown-container">
             {Object.entries(timer).map(([unit, value]) => (
-              <div key={unit} className="flex flex-col items-center">
+              <div key={unit} className="countdown-item">
                 <CircularProgressbar
                   value={value}
                   maxValue={unit === 'days' ? 365 : 60}
-                  text={`${value} ${unit}`}
+                  text={`${value}`}
                   styles={buildStyles({
                     pathColor: `rgba(62, 152, 199, ${value / 100})`,
                     textColor: '#fff',
@@ -119,10 +135,11 @@ const Hero: React.FC = () => {
                     backgroundColor: '#3e98c7',
                   })}
                 />
-                <p className="mt-2 capitalize">{unit}</p>
+                <p>{unit}</p>
               </div>
             ))}
           </div>
+
           <div className="buttons-container">
             <a href="/pre-register" className="bg-[#FEFBF6] hover:bg-ctaBg hover:text-bg text-textPrimary font-bold py-3 px-6 rounded-lg transition-colors duration-300">Pre-Register Now</a>
             <a href="/sponsor" className="border border-[#A78295] hover:bg-ctaBg hover:text-bg text-bg font-bold py-3 px-6 rounded-lg transition-colors duration-300">Become a Sponsor</a>

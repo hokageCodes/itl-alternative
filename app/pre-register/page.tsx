@@ -87,7 +87,7 @@ const PreRegister: React.FC = () => {
   const handleGoBack = () => {
     // Define what to do when user clicks on "Go back home" button
     // You can navigate back to home or perform any other action
-    console.log('Navigate back home');
+    window.location.href = "/";
   };
 
   return (

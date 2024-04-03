@@ -14,12 +14,12 @@ interface ErrorData {
 const formSteps = [
   { title: "Nominator's Information", fields: ["Nominator's Name", "Nominator's Telephone Number", "Nominator's Email"] },
   { title: "Nominee's Information", fields: ["Nominee's Name", "Nominee's Email"] },
-  { title: 'Nomination Details', fields: ['Nomination Category', 'Explanation', 'Web Links and Supporting Documentation'] },
+  { title: 'Nomination Details', fields: ['Nomination Category', 'Reason(s) for nominating', 'Web Links and Supporting Documentation'] },
 ];
 
 const nominationCategories = [
-  'Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5',
-  'Category 6', 'Category 7', 'Category 8', 'Category 9', 'Category 10'
+  'Diversity Champion', 'Community Impact Award', 'Leadership in Legal Education Award', 'Trailblazer in Technology Award', 'Lifetime Achievement Award',
+  'Rising Star Award', 'Mentorship Excellence Award', 'Innovative Recruitment Award', 'Entrepreneurial Excellence Award', 'The Nobel Award'
 ];
 
 const MultiStepForm: React.FC = () => {
@@ -155,7 +155,7 @@ const MultiStepForm: React.FC = () => {
         </div>
 
         <div className="mt-8 text-center text-gray-900 font-bold">
-          Need assistance? Contact support at support@example.com.
+          Need assistance? Contact support at info@itlconference.ca.
         </div>
 
         {success && (
