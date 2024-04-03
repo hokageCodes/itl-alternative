@@ -62,7 +62,7 @@ const TextContainer = styled.div`
       margin-right: 1rem; // Add spacing between countdown items
     }
   }
-
+  
   .countdown-text {
     display: flex;
     justify-content: center;
