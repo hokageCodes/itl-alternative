@@ -6,6 +6,7 @@ import Hero from "@/components/hero/Hero";
 import PartnersSection from "@/components/partners/PartnersSection";
 import SpeakerIntroSection from "@/components/speaker/SpeakerSection";
 import WhyAttendSection from "@/components/why-attend/WhyAttend";
+import Loader from '@/components/loader/Loader';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -20,12 +21,18 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Hero />
-      <PartnersSection />
-      <AboutSection />
-      <WhyAttendSection />
-      <SpeakerIntroSection />
-      <LandingFaqSection />
+      {isLoading ? (
+        <Loader />
+      ): (
+        <div>
+          <Hero />
+          <PartnersSection />
+          <AboutSection />
+          <WhyAttendSection />
+          <SpeakerIntroSection />
+          <LandingFaqSection />
+        </div>
+      )}
     </>
   );
 }

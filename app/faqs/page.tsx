@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Image from 'next/image';
 import styled from 'styled-components';
+import Loader from '@/components/loader/Loader';
 
 interface Faq {
   question: string;
@@ -54,6 +55,16 @@ const FaqItem = ({ faq }: { faq: Faq }) => {
 const FaqSection = () => {
   const [displayCount, setDisplayCount] = useState(DISPLAY_LIMIT);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    // Simulating data loading delay
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const showMoreFaqs = () => {
     setDisplayCount(prevCount => prevCount + DISPLAY_LIMIT);
@@ -68,35 +79,42 @@ const FaqSection = () => {
   }, []);
 
   return (
-    <div>
-      {/* Banner and Search Input */}
-      <div className="bg-ctaBg py-4 mt-20 text-bg text-center font-bold">
-        <h1 className="text-4xl">Frequently Asked Questions</h1>
-        <div className="mx-auto max-w-md mt-4">
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search FAQs..."
-            className="w-full text-[#000] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-          />
+    <>
+      {isLoading ? (
+        <Loader />
+      ): (
+
+        <div>
+          {/* Banner and Search Input */}
+          <div className="bg-ctaBg py-4 mt-20 text-bg text-center font-bold">
+            <h1 className="text-4xl">Frequently Asked Questions</h1>
+            <div className="mx-auto max-w-md mt-4">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search FAQs..."
+                className="w-full text-[#000] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              />
+            </div>
+          </div>
+          {/* FAQ Section */}
+          <div className="p-6 bg-bg">
+            <InfiniteScroll
+              dataLength={displayCount}
+              next={showMoreFaqs}
+              hasMore={displayCount < filteredFaqs.length}
+              loader={<h4>Loading...</h4>}
+              scrollThreshold={0.9}
+            >
+              {filteredFaqs.slice(0, displayCount).map((faq, index) => (
+                <FaqItem key={index} faq={faq} />
+              ))}
+            </InfiniteScroll>
+          </div>
         </div>
-      </div>
-      {/* FAQ Section */}
-      <div className="p-6 bg-bg">
-        <InfiniteScroll
-          dataLength={displayCount}
-          next={showMoreFaqs}
-          hasMore={displayCount < filteredFaqs.length}
-          loader={<h4>Loading...</h4>}
-          scrollThreshold={0.9}
-        >
-          {filteredFaqs.slice(0, displayCount).map((faq, index) => (
-            <FaqItem key={index} faq={faq} />
-          ))}
-        </InfiniteScroll>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
