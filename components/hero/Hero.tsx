@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
       <VideoBackground src="/hero-video.mp4" />
       <ContentContainer>
         <TextContainer>
-          <h1 className='text-4xl font-black'>THE ITL CONFERENCE '25</h1>
+          <h1 className='text-4xl font-black'>THE ITL CONFERENCE &#39;25</h1>
           <p className='text-2xl font-bold'>Crossing Borders, Breaking Barriers.</p>
           <p className='text-lg'>April 3-5, 2025 - Calgary, Alberta</p>
           <div className="countdown-container">
