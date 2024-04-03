@@ -3,7 +3,6 @@
 @tailwind utilities;
 
   .hero-deco {
-    font-size: 100px;
     color: transparent;
     -webkit-text-stroke: 1px #fff;  
     background: url(/back.png);
