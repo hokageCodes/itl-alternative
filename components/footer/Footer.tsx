@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto border-textPrimary lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-textPrimary sm:text-center">© 2023 <a href="#" className="hover:underline">The ITL Conference</a>. All Rights Reserved.
+          <span className="text-sm text-textPrimary sm:text-center">© 2025 <a href="#" className="hover:underline">The ITL Conference</a>. All Rights Reserved.
           </span>
           {/* <div className="flex mt-4 sm:justify-center sm:mt-0">
               <a href="#" className="text-textPrimary dark:hover:text-white">
