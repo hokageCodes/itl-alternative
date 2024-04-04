@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="#" className="flex flex-col gap-4 items-center">
-              <img src="/logo.png" className="h-16 me-3" alt="Your Logo" />
+              <Image src="/logo.png" layout='fill' className="h-16 me-3" alt="Your Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap">The ITL Conference</span>
               <p className='text-center'>The largest gathering of Internationally Trained Lawyers (ITLs) in Canada.</p>
             </a>
